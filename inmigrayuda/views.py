@@ -6,3 +6,14 @@ from django.shortcuts import render
 def index(request):
     return render(request,'index.html',{})
 
+def preguntasFrecuentes(request):
+    return render(request,'preguntasFrecuentes.html',{})
+
+def contacto(request):
+    return render(request,'contacto.html',{})
+
+def quienesSomos(request):
+    return render(request,'quienesSomos.html',{})
+
+def noticias(request):
+    return render(request,'noticias.html',{})
