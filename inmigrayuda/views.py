@@ -17,3 +17,6 @@ def quienesSomos(request):
 
 def noticias(request):
     return render(request,'noticias.html',{})
+
+def categorias(request):
+    return render(request,'categorias.html',{})
