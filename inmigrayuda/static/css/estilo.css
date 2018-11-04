@@ -1,0 +1,177 @@
+.base {
+    background-color: rgba(192, 191, 191, 0.158)
+}
+
+.nombreLogo{
+    padding-top: 40px;
+}
+
+.centrar {
+    padding-left: 14px;
+        color: white;
+    }
+
+.navbar {
+    width: 100%;
+    position: fixed;
+}
+
+.nav-pills {
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.vertical{
+    border:         none;
+    border-left:    1px solid hsla(200, 10%, 50%,100);
+    height:         100vh;
+    width:          1px;       
+}
+
+
+.ubicacionPagina{
+    color: black;
+    background-color: whitesmoke;
+}
+
+.input{
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: rgb(0, 123, 245);
+}
+
+.footer{
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.blurr{
+    filter: blur(5px);
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 400px;
+    object-position: center;
+  }
+
+  .separador{
+    border-top: 5px solid rgba(0, 101, 114, 0.719);
+  }
+
+  .link{
+      color: rgba(0, 123, 139, 0.719);
+  }
+
+  .bg-text {
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.555); /* Black w/opacity/see-through */
+    color: white;
+    font-weight: bold;
+    border: 3px solid #f1f1f1;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+  }
+
+
+  body {
+    margin: 0;
+    font-size: 19px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .header {
+    background-color: #f1f1f1;
+    padding: 30px;
+    text-align: center;
+  }
+  
+  #navbar {
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  #navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+
+  .estilo {
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 136, 125);
+    margin: 5px;
+    padding: 2px;
+    cursor: pointer;
+    border: none;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition: 1.0s;
+  }
+
+    
+  .estilo:hover {
+    background-color: rgb(0, 86, 92);
+    color: white;
+  }
+
+  .noticias{
+    height: 150px;
+    width: 280px;
+  }
+
+  .dos{
+    height: 150px;
+    width: 340px;
+  }
+
+  .tres {
+    height: 150px;
+    width: 280px;
+  }
+
+  .cuatro{
+    height: 150px;
+    width: 457px;
+  }
+
+
+  
+  #navbar a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  #navbar a.active {
+    background-color: rgb(0, 77, 87);
+    color: white;
+  }
+
+  .textoEncima{
+    position: absolute;
+    top: 39%;
+    left: 39%;
+  }
+  
+  .content {
+    padding: 16px;
+  }
+  
+  .centrado{
+    text-align: center;
+  }
+
+  .fuenteNoticia{
+    text-align: right;
+  }
