@@ -28,17 +28,17 @@
 
 
     <div id="navbar" class="sticky-top">
-        <a class="nav-link active" id="btnInicio" href="../">Inicio</a>
+        <a class="nav-link" id="btnInicio" href="../">Inicio</a>
         <a class="nav-link" id="btnPreguntasfre" href="/preguntasFrecuentes">Preguntas Frecuentes</a>
         <a class="nav-link" id="btnQuienesSomos" href="/quienesSomos">¿Quienes somos?</a>
         <a class="nav-link" id="btnContacto" href="/contacto">Contacto</a>
-        <a class="nav-link" id="btnCategorias" href="#">Categorias</a>
+        <a class="nav-link active" id="btnCategorias" href="#">Categorias</a>
 
     </div>
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-2">
+            <div class="col-md-2">
                 <br>
                 <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                         
@@ -54,14 +54,15 @@
                         aria-selected="false">Casas</a>
                 </div>
             </div>
-            <div class="col-10">
+            <div class="col-md-10">
                 <div class="tab-content" id="v-pills-tabContent">
                     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                         <br>
-                        <h4>Ministerios</h4>
-
                         
-                            <a href="https://www.interior.gob.cl/" target="_blank">
+
+                        <div class="container-fluid">
+                                <h4>Ministerios</h4>
+                                <a href="https://www.interior.gob.cl/" target="_blank">
                                     <button class="estilo dos"> ministerio del interior y seguridad publica </button>
                                 </a>
 
@@ -148,6 +149,8 @@
                                 <a href="https://www.interior.gob.cl/" target="_blank">
                                     <button class="estilo dos"> ministerio del deporte </button>
                                 </a>
+                        </div>
+
                         
                     </div>
                     <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
@@ -174,8 +177,8 @@
 
         <div class="footer footer-copyright text-center py-3 ">
             <h6> © 2018 Copyright:
-                <a href="index.html"> Inmigrayuda.cl </a>
-            </h6>
+                    <a href="../"> Inmigrayuda.cl </a>
+                </h6>
         </div>
 
     </footer>
