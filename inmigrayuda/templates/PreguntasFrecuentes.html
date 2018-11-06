@@ -35,7 +35,25 @@
 
     </div>
 
+    {% if usuario is not None %}
+    <div class="container">
 
+        <form id="formulario" enctype="multipart/form-data" action="" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="exampleInputEmail1">Pregunta</label>
+                <input type="email" class="form-control" name="correo" id="correo" placeholder="Enter email">
+            </div>
+            <input type="hidden" id="id" name="id" value="">
+            <div class="form-group">
+                <label for="exampleInputPassword1">Respuesta</label>
+                <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre">
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    {% endif %}
 
     <div class="container-fluid">
         <br>
