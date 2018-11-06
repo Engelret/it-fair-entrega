@@ -1,4 +1,4 @@
-
+{% load static %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+    <link rel="stylesheet" href="{% static 'css/estilo_login.css' %}">
 
 
     <title>Inicio de sesión</title>
@@ -17,19 +20,30 @@
     <link href="https://getbootstrap.com/docs/4.1/examples/sign-in/signin.css" rel="stylesheet">
   </head>
 
-  <body class="text-center">
-    <form method="POST" class="form-signin" action="{% url "iniciar" %}">
+  <body class="text-center distancia">
+    <div class="wrap">
+         <form method="POST" class="login" action="{% url "iniciar" %}">
         {% csrf_token %}
-    <h1 class="h3 mb-3 font-weight-normal">Iniciar Sesión</h1>
-      <label for="inputEmail"  class="sr-only">email</label>
-      <input type="text" id="inputEmail" name="nombre_usuario" class="form-control" placeholder="Email address" required autofocus>
-      <label for="inputPassword" class="sr-only">Contraseña</label>
-      <input type="password" name="contrasenia" id="inputPassword" class="form-control" placeholder="Password" required>
+      <h2 class="tituloLogin">Iniciar Sesión Administrador</h2>
+      <img src="{% static 'img/logo/logoInmiigrantes.png' %}" width="100px" alt="">
+      <hr>
+      <input type="text" id="inputEmail" name="nombre_usuario" class="form-control" placeholder="Nombre de usuario" required autofocus>
+      <hr>
+      <input type="password" name="contrasenia" id="inputPassword" class="form-control" placeholder="Contraseña" required>
       <div class="checkbox mb-3">
        
       </div>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Iniciar Sesión</button>
-      <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
-    </form>
+      <button class="btn btn-primary btn-lg btn-block" type="submit">Iniciar Sesión</button>
+      <br>
+      <p class="tituloLogin">&copy; inmigrayuda - 2018</p>
+    </form> 
+    </div>
+
+
+
+    <script src="{% static 'js/jquery-3.3.1.js' %}"></script>
+    <script src='//production-assets.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js'></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
   </body>
 </html>

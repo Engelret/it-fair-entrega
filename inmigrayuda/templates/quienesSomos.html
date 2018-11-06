@@ -33,6 +33,18 @@
         <a class="nav-link" id="btnContacto" href="/contacto">Contacto</a>
         <a class="nav-link" id="btnCategorias" href="/categorias">Categorias</a>
 
+        <ul class="navbar-nav my-2 my-lg-0">
+                {% if user.is_authenticated %}
+                <li class="nav-item">Bienvenido {{usuario}}
+                    <a href="{% url "cerrar_session" %}">Cerrar Sesión</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a href="{% url "login" %}">Ingresar</a>
+                </li>
+                {% endif %}
+            </ul>
+
     </div>
 
 

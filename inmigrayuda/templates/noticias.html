@@ -48,34 +48,40 @@
         </ul>
 
     </div>
+    <br>
 
     {% if usuario is not None %}
-    <div class="container">
-
-        <form id="formulario" enctype="multipart/form-data" action="" method="post">
-            {% csrf_token %}
-            <div class="form-group">
-                <label for="exampleInputEmail1">Titulo de la noticia</label>
-                <input type="email" class="form-control" name="correo" id="correo" placeholder="Enter email">
-            </div>
-            <input type="hidden" id="id" name="id" value="">
-            <div class="form-group">
-                <label for="exampleInputPassword1">Cuerpo de la noticia</label>
-                <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre">
-            </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Adicional</label>
-                <input type="text" class="form-control" name="contrasenia" id="contrasenia" placeholder="Adicional">
-            </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Foto</label>
-                <input type="file" class="form-control" name="foto" id="foto" placeholder="Adicional">
-            </div>
-            <br>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-    </div>
+        <div class="border border-primary">
+            <div class="container">
+                            <form id="formulario" enctype="multipart/form-data" action="" method="post">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <br>
+                                    <label for="exampleInputEmail1">Titulo de la noticia</label>
+                                    <input type="text" class="form-control" name="tituloNoticia" id="tituloNoticia" placeholder="Ingrese el titulo de la noticia">
+                                </div>
+                                <input type="hidden" id="id" name="id" value="">
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Cuerpo de la noticia</label>
+                                    <input type="text" class="form-control" name="cuerpoNoticia" id="cuerpoNoticia" placeholder="Ingrese descripcion completa de la noticia">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Foto</label>
+                                    <input type="file" class="form-control" name="fotoNoticia" id="fotoNoticia" placeholder="Adicional">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Fuente</label>
+                                    <input type="text" class="form-control" name="fuenteNoticia" id="fuenteNoticia" placeholder="Ingrese fuente de la noticia">
+                                </div>
+                
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <br>
+                                <br>
+                            </form>         
+                    </div>
+                </div>
     {% endif %}
+
 
 
     <div class="container-fluid">

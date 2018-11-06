@@ -33,13 +33,27 @@
         <a class="nav-link" id="btnContacto" href="/contacto">Contacto</a>
         <a class="nav-link" id="btnCategorias" href="/categorias">Categorias</a>
 
-    </div>
+        <ul class="navbar-nav my-2 my-lg-0">
+                {% if user.is_authenticated %}
+                <li class="nav-item">Bienvenido {{usuario}}
+                    <a href="{% url "cerrar_session" %}">Cerrar Sesión</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a href="{% url "login" %}">Ingresar</a>
+                </li>
+                {% endif %}
+            </ul>
 
+    </div>
+<br>
     {% if usuario is not None %}
+    <div class="border border-primary">
     <div class="container">
 
         <form id="formulario" enctype="multipart/form-data" action="" method="post">
             {% csrf_token %}
+            <br>
             <div class="form-group">
                 <label for="exampleInputEmail1">Pregunta</label>
                 <input type="email" class="form-control" name="correo" id="correo" placeholder="Enter email">
@@ -49,10 +63,13 @@
                 <label for="exampleInputPassword1">Respuesta</label>
                 <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre">
             </div>
-            <br>
+            
             <button type="submit" class="btn btn-primary">Submit</button>
+            <br>
+            <br>
         </form>
     </div>
+</div>
     {% endif %}
 
     <div class="container-fluid">
