@@ -35,7 +35,7 @@
 
         <ul class="navbar-nav my-2 my-lg-0">
                 {% if user.is_authenticated %}
-                <li class="nav-item">Bienvenido {{usuario}}
+                <li class="nav-item">
                     <a href="{% url "cerrar_session" %}">Cerrar Sesión</a>
                 </li>
                 {% else %}
@@ -51,17 +51,17 @@
     <div class="border border-primary">
     <div class="container">
 
-        <form id="formulario" enctype="multipart/form-data" action="" method="post">
+        <form id="formulario" enctype="multipart/form-data" action="{% url 'nuevaPregunta' %}"  method="post">
             {% csrf_token %}
             <br>
             <div class="form-group">
                 <label for="exampleInputEmail1">Pregunta</label>
-                <input type="email" class="form-control" name="correo" id="correo" placeholder="Enter email">
+                <input type="text" class="form-control" name="pregunta" id="pregunta" placeholder="Ingresar pregunta">
             </div>
             <input type="hidden" id="id" name="id" value="">
             <div class="form-group">
                 <label for="exampleInputPassword1">Respuesta</label>
-                <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre">
+                <input type="text" class="form-control" name="respuesta" id="respuesta" placeholder="Ingresar respuesta">
             </div>
             
             <button type="submit" class="btn btn-primary">Submit</button>
@@ -76,62 +76,23 @@
         <br>
         <h2>Preguntas mas frecuentes</h2>
         <hr>
-        <div class="accordion" id="accordionExample">
-            <div class="card">
-                <div class="card-header" id="headingOne">
-                    <h5 class="mb-0">
-                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                            Pregunta ......
-                        </button>
-                    </h5>
+        
+        {% for p in preguntasFrecuentes %}
+        <div class="card">
+                <div class="card-header">
+                        {{p.pregunta}}
                 </div>
-                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-                    <div class="card-body">
-                        Respuesta ....
-                    </div>
+                <div class="card-body">
+                  <p class="card-text">{{p.respuesta}}</p>
                 </div>
-            </div>
-            <br>
-            <div class="card">
-                <div class="card-header" id="headingTwo">
-                    <h5 class="mb-0">
-                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
-                            aria-controls="collapseTwo">
-                            Pregunta ......
-                        </button>
-                    </h5>
-                </div>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                    <div class="card-body">
-                        Respuesta ....
-                    </div>
-                </div>
-            </div>
-            <br>
-            <div class="card">
-                <div class="card-header" id="headingThree">
-                    <h5 class="mb-0">
-                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
-                            aria-controls="collapseThree">
-                            Pregunta .....
-                        </button>
-                    </h5>
-                </div>
-                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                    <div class="card-body">
-                        Respuesta ....
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
+              </div>
+              {% endfor %} 
 
     <br>
     <footer class="page-footer font-small blue ">
 
         <div class="footer footer-copyright text-center py-3 ">
-            <h6> © 2018 Copyright: 
+            <h6> © 2018 Copyright:
                     <a href="../"> Inmigrayuda.cl </a>
                 </h6>
         </div>

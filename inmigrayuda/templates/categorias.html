@@ -36,7 +36,7 @@
 
         <ul class="navbar-nav my-2 my-lg-0">
                 {% if user.is_authenticated %}
-                <li class="nav-item">Bienvenido {{usuario}}
+                <li class="nav-item">
                     <a href="{% url "cerrar_session" %}">Cerrar Sesión</a>
                 </li>
                 {% else %}

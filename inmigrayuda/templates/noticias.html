@@ -37,7 +37,7 @@
 
         <ul class="navbar-nav my-2 my-lg-0">
             {% if user.is_authenticated %}
-            <li class="nav-item">Bienvenido {{usuario}}
+            <li class="nav-item">
                 <a href="{% url "cerrar_session" %}">Cerrar Sesión</a>
             </li>
             {% else %}
@@ -53,25 +53,24 @@
     {% if usuario is not None %}
         <div class="border border-primary">
             <div class="container">
-                            <form id="formulario" enctype="multipart/form-data" action="" method="post">
+                            <form id="formulario" enctype="multipart/form-data" action="{% url 'nuevaNoticia' %}" method="post">
                                 {% csrf_token %}
                                 <div class="form-group">
                                     <br>
                                     <label for="exampleInputEmail1">Titulo de la noticia</label>
-                                    <input type="text" class="form-control" name="tituloNoticia" id="tituloNoticia" placeholder="Ingrese el titulo de la noticia">
+                                    <input type="text" class="form-control" name="titulo" id="titulo" placeholder="Ingrese el titulo de la noticia">
                                 </div>
-                                <input type="hidden" id="id" name="id" value="">
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Cuerpo de la noticia</label>
-                                    <input type="text" class="form-control" name="cuerpoNoticia" id="cuerpoNoticia" placeholder="Ingrese descripcion completa de la noticia">
+                                    <input type="text" class="form-control" name="cuerpo" id="cuerpo" placeholder="Ingrese descripcion completa de la noticia">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Foto</label>
-                                    <input type="file" class="form-control" name="fotoNoticia" id="fotoNoticia" placeholder="Adicional">
+                                    <input type="file" class="form-control" name="imagen" id="imagen" placeholder="Adicional">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Fuente</label>
-                                    <input type="text" class="form-control" name="fuenteNoticia" id="fuenteNoticia" placeholder="Ingrese fuente de la noticia">
+                                    <input type="text" class="form-control" name="fuente" id="fuente" placeholder="Ingrese fuente de la noticia">
                                 </div>
                 
                                 <button type="submit" class="btn btn-primary">Submit</button>
@@ -83,109 +82,31 @@
     {% endif %}
 
 
-
+    
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-
-                <br>
-                <h4>Noticias</h4>
-                <br>
-                <ul class="nav nav-tabs" id="myTab" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link active link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Nacional</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Internacional</a>
-                    </li>
-                </ul>
-                <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    {% for n in Noticias %}
                         <br>
                         <!-- Noticia 1 -->
-                        <h2>Inmigrantes ven a los chilenos como individualistas, materialistas, liberales y poco sociables
-                        </h2>
-                        <p>Según la encuesta realizada por la U. de Talca, el 59,1% de los extranjeros que viven en Chile cree
-                            que el país es moderno.</p>
+                        <h2>    {{n.titulo}}    </h2>
 
-                        <img class=" img-fluid" src="img/noticias/Nacional/noticia1.jpg" alt="noticia1">
+                        <img class=" img-fluid" src="/media/{{p.foto}}" alt="no foto" srcset="">
+                        
                         <hr>
 
-                        <p>La mejor condición económica que Chile tiene con respecto de otros países de Latinoamérica ,entre
-                            otros aspectos, ha hecho que miles de ciudadanos extranjeros lleguen al país con mejores expectativas
-                            de vida.
-                            <br> El proceso se ha transformado en tema obligado para los chilenos, quienes tienen diversas opiniones
-                            al respecto, pero muy pocos se han detenido a pensar qué piensan los inmigrantes de Chile y de
-                            los chilenos.
-                        </p>
-                        <p>
-                            Interrogantes que el Centro Nacional de Estudios Migratorios (Cenem) de la Universidad de Talca buscó responder mediante
-                            una encuesta que arrojó sorprendentes resultados.
-                        </p>
-                        <p>
-                            <b> El 46,4% de los inmigrantes consideran que Chile es un país menos inseguro que sus lugares de
-                                procedencia</b>, mientras que el 59,1% de los encuestados advierte que Chile es más moderno
-                            y el 45% advirtió que la comunidad nacional es más democrática.
-                        </p>
-                        <p>
-                            Pero no todo fue positivo, ya que el 56% de los extranjeros que viven en el país consideran que los chilenos son una sociedad
-                            segregadora, mientras que también consideraron que los nacionales son individualistas (61,4%),
-                            materialistas (64,5%), liberales (60%) y menos sociables (40,3%).
-                        </p>
-                        <p>
-                            Finalmente el 91,9% de los extranjeros encuestados aclaró que ha incorporado costumbres y tradiciones chilenas a su estilo
-                            de vida, mientras que el 84,6% dice mantener costumbres de sus países de origen.
-                        </p>
-                        <i>
-                            <h6 class="fuenteNoticia">Fuente:
-                                <a target="_blank" href="http://www.ahoranoticias.cl/noticias/nacional/238250-inmigrantes-ven-a-los-chilenos-como-individualistas-materialistas-liberales-y-poco-sociables.html">http://www.ahoranoticias.cl</a>
-                                , 09 de Octubre de 2018</h6>
-                        </i>
-
-
-                        <hr class="separador">
-                        <!-- Noticia 2 -->
-
-                        <br>
-                        <h2>Venezolanos se convierten en la comunidad de inmigrantes más grande de Chile</h2>
-                        <p>Las cifras de esta población se han quintuplicado en los últimos tres años, representando el 24,2%
-                            del total de los encuestados.</p>
-
-                        <img class="img-fluid" src="img/noticias/Nacional/poblacionMasGrande.jpg" alt="poblacionMasGrande">
-
-                        <hr>
-                        <p>Los venezolanos en Chile se han convertido por primera vez en la comunidad de inmigrantes más grande
-                            del país, superando a la peruana, con un total de 187.892.
-                        </p>
-                        <p>
-                            Según números de la Encuesta de Caracterización Económica y Social (Casen) 2017, según calculó La Tercera, el total de personas
-                            provenientes de otro país y residentes en el terrotorio es de 777.407, de los cuales casi la
-                            mitad llegó a partir de 2015, marcando un alza de 67%.</p>
+                        <p>     {{n.cuerpo}}        </p>
 
                         <i>
-                            <h6 class="fuenteNoticia">Fuente:
-                                <a target="_blank" href="http://www.ahoranoticias.cl/noticias/nacional/237427-venezolanos-se-convierten-en-la-comunidad-de-inmigrantes-mas-grande-de-chile.html">http://www.ahoranoticias.cl</a>
-                                , 01 de Octubre de 2018</h6>
+                            <h6 class="fuenteNoticia">Fuente: {{n.fuente}}</h6>
                         </i>
 
                         <hr class="separador">
-                    </div>
-                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                        <!-- noticia 1 internacional -->
-                        <i>
-                            <br>
-                            <h2>Más de 13,500 inmigrantes podrían ser deportados tras investigación de USCIS</h2>
-                            <h6 class="fuenteNoticia">Fuente:
-                                <a target="_blank" href="https://laopinion.com/2018/10/09/mas-de-13500-inmigrantes-podrian-ser-deportados-tras-investigacion-de-uscis/">https://laopinion.com</a>
-                                , 09 de Octubre de 2018</h6>
-                        </i>
-                    </div>
-                </div>
-
+                    {% endfor %} 
             </div>
         </div>
     </div>
-
+    
 
 
     <br>

@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'itFairDjango.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'negfssey',
+        'USER': 'negfssey',
+        'PASSWORD': 'yVkMUX86jo_Sdg3_i3R0W3kG7akNG_zy',
+        'HOST': 'stampy.db.elephantsql.com',
+        'PORT': '5432',
     }
 }
 
