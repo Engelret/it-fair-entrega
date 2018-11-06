@@ -34,7 +34,7 @@
         <a class="nav-link active" id="btnContacto" href="#">Contacto</a>
         <a class="nav-link" id="btnCategorias" href="/categorias">Categorias</a>
 
-        <ul class="navbar-nav my-2 my-lg-0">
+        <ul class="navbar-nav my-2 my-lg-0" style="padding-left: 550px">
                 {% if user.is_authenticated %}
                 <li class="nav-item">
                     <a href="{% url "cerrar_session" %}">Cerrar Sesión</a>
