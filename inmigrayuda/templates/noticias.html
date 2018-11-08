@@ -35,7 +35,7 @@
         <a class="nav-link" id="btnCategorias" href="/categorias">Categorias</a>
 
 
-        <ul class="navbar-nav my-2 my-lg-0">
+        <ul class="navbar-nav my-2 my-lg-0" style="padding-left: 550px">
             {% if user.is_authenticated %}
             <li class="nav-item">
                 <a href="{% url "cerrar_session" %}">Cerrar Sesión</a>
@@ -87,6 +87,19 @@
         <div class="row">
             <div class="col-md-12">
                     {% for n in Noticias %}
+<<<<<<< HEAD
+                       <!-- <hr class="separador"> -->
+
+                        <div class="card">
+                            <div class="card-header">
+                                {{n.titulo}}
+                            </div>
+                            <div class="card-body">
+                              <p class="card-text">{{n.cuerpo}}  </p>
+                            </div>
+                          </div>
+                          <br>
+=======
                         <br>
                         <!-- Noticia 1 -->
                         <h2>    {{n.titulo}}    </h2>
@@ -102,6 +115,7 @@
                         </i>
 
                         <hr class="separador">
+>>>>>>> master
                     {% endfor %} 
             </div>
         </div>
