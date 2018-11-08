@@ -87,6 +87,7 @@
         <div class="row">
             <div class="col-md-12">
                     {% for n in Noticias %}
+<<<<<<< HEAD
                        <!-- <hr class="separador"> -->
 
                         <div class="card">
@@ -98,6 +99,23 @@
                             </div>
                           </div>
                           <br>
+=======
+                        <br>
+                        <!-- Noticia 1 -->
+                        <h2>    {{n.titulo}}    </h2>
+
+                        <img class=" img-fluid" src="/fotos/{{p.foto}}" alt="no foto" srcset="">
+                        
+                        <hr>
+
+                        <p>     {{n.cuerpo}}        </p>
+
+                        <i>
+                            <h6 class="fuenteNoticia">Fuente: {{n.fuente}}</h6>
+                        </i>
+
+                        <hr class="separador">
+>>>>>>> master
                     {% endfor %} 
             </div>
         </div>
