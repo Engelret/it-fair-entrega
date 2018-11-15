@@ -291,38 +291,41 @@ function miFuncion(event){
 
 $(function(){
   var FillField= "Se requiere completar este campo"
-      $("#formulario").validate({
-          lang: 'es',
-          rules:{
-              correo:{
-                  required:true, 
-                  email:true
-              },
-              nombre:{
-                  required:true,
-                  alpha:true,
-              },asunto:{
-                  requierd:true,
-              },mensaje:{
-                  required:true,
-              }
+
+  $(document).ready(function(){
+    $("#formulario").validate({
+      lang: 'es',
+      rules:{
+          correo:{
+              required:true, 
+              email:true
           },
-          messages: {
-              correo:{
-                  required:FillField,
-                  email:"Ingrese un email válido"
-              },
-              nombre:{
-                  required:FillField, 
-                  alpha:"¡Solo se aceptan caracteres no numéricos!"
-              },asunto:{
-                  required:FillField,
-              },mensaje:{
-                required:FillField,
-            }
+          nombre:{
+              required:true,
+              alpha:true,
+          },asunto:{
+              required:true,
+          },mensaje:{
+              required:true,
+          }
+      },
+      messages: {
+          correo:{
+              required:FillField,
+              email:"Ingrese un email válido"
           },
-      })
+          nombre:{
+              required:FillField, 
+              alpha:"¡Solo se aceptan caracteres no numéricos!"
+          },asunto:{
+              required:FillField,
+          },mensaje:{
+            required:FillField,
+        }
+    },
+  })
 })
+});
 
 /*
 var mundo = {
